@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html  ng-app="WebSocketsApp">
+  <head>
+    <title>Networking Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="./css/index.css" rel="stylesheet">
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Project name</a>
+        <div class="nav-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container" ng-controller="SocketsController" ng-cloak>
+
+      <div class="starter-template">
+        <h1>Landing Page</h1>
+      </div>
+      
+      <h1>Incoming Messages</h1>
+      <ul id="messages" class="unstyled">
+          <li ng-repeat="message in messages">
+              <label class="checkbox">
+                  <input type="checkbox"/>
+                  {{message.message}}
+              </label>
+          </li>
+      </ul>
+
+    </div><!-- /.container -->
+    
+    <!-- JavaScript plugins (requires jQuery) -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/messaging.js"></script>
+  </body>
+</html>
