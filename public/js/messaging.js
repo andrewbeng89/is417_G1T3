@@ -14,7 +14,7 @@ webSocketsApp.controller('SocketsController', function($scope, $http) {
         $scope.$apply();
         console.log($scope.messages)
         socket.emit('reply', {
-            reply : 'hello'
+            reply : new Date().getTime()
         });
     });
 
