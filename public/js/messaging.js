@@ -7,15 +7,12 @@ webSocketsApp.controller('SocketsController', function($scope, $http) {
     
     var socket = io.connect('/');
     socket.on('message', function(data) {
-        console.log({
-        	incoming: data
-        });
+        data.message = new Date().getTime() - data.message;
         $scope.messages.push(data);
         $scope.$apply();
-        console.log($scope.messages)
-        socket.emit('reply', {
-            reply : new Date().getTime()
-        });
+        /*socket.emit('reply', {
+            reply : data.message
+        });*/
     });
 
 });

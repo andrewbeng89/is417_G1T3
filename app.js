@@ -56,12 +56,12 @@ io.configure('development', function(){
   io.enable('browser client gzip');
 // gzip the file
 /*'websocket', 'flashsocket', 'htmlfile', 'xhr-polling', 'jsonp-polling'*/
-  io.set('transports', ['jsonp-polling']);
+  io.set('transports', ['websocket']);
 });
 
 io.sockets.on('connection', function (socket) {
-  for (var i = 0; i < 100; i++) {
-    socket.emit('message', { message: 'hello ' + new Date().getTime() });
+  for (var i = 0; i < 1000; i++) {
+    socket.emit('message', { message: new Date().getTime() });
   };
   socket.on('reply', function (data) {
     console.log(data);
