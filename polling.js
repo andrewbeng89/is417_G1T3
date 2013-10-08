@@ -56,7 +56,7 @@ io.configure('development', function(){
   io.enable('browser client gzip');
 // gzip the file
 /*'websocket', 'flashsocket', 'htmlfile', 'xhr-polling', 'jsonp-polling'*/
-  io.set('transports', ['websocket']);
+  io.set('transports', ['xhr-polling']);
 });
 
 io.sockets.on('connection', function (socket) {
